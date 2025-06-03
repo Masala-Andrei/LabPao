@@ -28,6 +28,24 @@ public class Client {
         }
 
         try {
+            calc.divide(null, 0.0);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+
+        try {
+            calc.divide(52.0, -1 / Double.MAX_VALUE);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+
+        try {
+            calc.divide(52.0, 1 / Double.MAX_VALUE);
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+
+        try {
             calc.average(null);
         } catch (Exception e) {
             System.out.println("Exception: " + e);
@@ -40,7 +58,7 @@ public class Client {
         }
 
         try {
-            Double[] values = Test.readDoublesFromFile("inexistent.txt");
+            Double[] values = Test.readDoublesFromFile("pathgreit.txt");
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }
